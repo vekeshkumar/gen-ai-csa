@@ -1,0 +1,3 @@
+
+ERROR:root:ValueError occured:invalid literal for int() with base 10: 'e'
+ERROR:root:ZeroDivisionError occured:division by zero
