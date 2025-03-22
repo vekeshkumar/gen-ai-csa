@@ -1,0 +1,84 @@
+Part 1:
+Application Task:
+
+Here are three potential tasks for which fine-tuning can be applied, along with the rationale for each:
+
+Legal Document Summarization
+
+Pre-trained Model: A large language model like a Llama model.
+
+Why Fine-tuning Is Beneficial: Legal documents are often long and complex, with specific terminology and structure. Fine-tuning a Llama model on a dataset of legal texts and summaries can enable it to generate concise, accurate summaries that capture the key points, saving legal professionals significant time.
+
+Sentiment Analysis for Social Media
+
+Pre-trained Model: A transformer model like a DistilBERT or RoBERTa.
+
+Why Fine-tuning Is Beneficial: Social media text is characterized by its informal language, slang, and brevity. Fine-tuning a model like DistilBERT on a dataset of social media posts labeled with sentiment (positive, negative, neutral) can significantly improve its accuracy in understanding the nuances of online communication.
+
+Image Captioning for a Specific Domain
+
+Pre-trained Model: A vision-language model.
+
+Why Fine-tuning Is Beneficial: While pre-trained vision-language models can generate general image captions, fine-tuning them on a dataset of images and captions from a specific domain (e.g., medical images, e-commerce product photos) can greatly enhance their ability to generate accurate and relevant captions for that particular area.
+
+
+
+
+
+Part 2:
+Implementing Fine-Tuning on Azure
+
+Case Study Activity:
+
+Let's consider fine-tuning a pre-trained model from Azure AI Studio's catalog for a customer service chatbot.
+
+Pre-trained Model: We would choose a GPT model from OpenAI, available in the Azure AI Model Catalog. GPT models are well-suited for conversational tasks due to their ability to understand natural language and generate coherent responses.
+
+Dataset and Preparation:
+
+We would create a dataset of customer service conversations, including:
+
+Customer inquiries (e.g., "How do I return a product?", "What is my order status?")
+
+Agent responses (e.g., step-by-step instructions, order information).
+
+The data would be prepared as follows:
+
+Text cleaning: Removing irrelevant characters, correcting typos.
+
+Dialogue structuring: Formatting conversations into turns with clear speaker identification.
+
+Data augmentation: Potentially paraphrasing questions or generating synthetic conversations to increase dataset size and robustness.
+
+Splitting the data into training, validation, and test sets.
+
+Evaluation and Challenges:
+
+After fine-tuning, we would evaluate the model's performance using metrics such as:
+
+Customer satisfaction: Measured through surveys or ratings after interacting with the chatbot.
+
+Task completion rate: The percentage of customer issues successfully resolved by the chatbot.
+
+Response relevance and fluency: Assessed by human evaluators or using metrics like BLEU or ROUGE.
+
+Error rate: The frequency of incorrect or nonsensical responses.
+
+Challenges we might face include:
+
+Data scarcity: Obtaining a sufficiently large and high-quality dataset of customer service conversations.
+
+Overfitting: The model may memorize the training data and perform poorly on new, unseen conversations.
+
+Handling diverse customer language: Customers may express themselves in various ways, including with slang, typos, or emotional language.
+
+Ensuring ethical and unbiased responses: The chatbot should avoid generating offensive, discriminatory, or unhelpful content.
+
+Part 3:
+Evaluating and Deploying Models:
+
+It's very important to evaluate a fine-tuned model using metrics like F1-Score and cross-validation. The F1-score provides a balanced measure of a model's precision and recall, which is especially useful when dealing with imbalanced datasets. Cross-validation, on the other hand, is a technique that assesses how well a model generalizes to unseen data by training and validating it on multiple subsets of the dataset.
+
+If you skip evaluation or do it poorly, you could run into several issues. For example, the model might perform well on the training data but fail miserably in real-world scenarios. This is known as overfitting. Also, if you don't use appropriate metrics, you might get a false sense of the model's performance. For instance, accuracy can be misleading if the classes are imbalanced.
+
+Poor evaluation can also lead to the deployment of a biased or unreliable model, which can have serious consequences depending on the application.

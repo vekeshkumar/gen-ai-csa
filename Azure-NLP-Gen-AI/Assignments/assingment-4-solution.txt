@@ -1,0 +1,166 @@
+Part 1:
+Building an LLM Application with Prompt Flow: Pickleball Court Booking Chatbot for Elderly People
+
+Here are the steps involved in building an LLM application with prompt flow for the use case you described, along with the inputs, prompts, outputs, and necessary integrations:
+
+Steps:
+
+Define the Application's Purpose:
+
+The chatbot will allow elderly users to easily book pickleball courts through a conversational interface.
+
+The chatbot should be user-friendly, accessible, and handle common booking scenarios.
+
+Select a Pre-trained LLM:
+
+Choose a powerful LLM from the Azure AI Model Catalog, such as a GPT model from OpenAI.
+
+Design the Prompt Flow:
+
+Create a series of interconnected prompts that guide the conversation and booking process.
+
+Use a visual tool like Azure AI Studio's prompt flow designer to create the flow.
+
+Develop Input Handling:
+
+Implement mechanisms to capture user input through text.
+
+Consider adding speech-to-text functionality for enhanced accessibility for elderly users.
+
+Craft Prompts:
+
+Design prompts that elicit the necessary information from the user (e.g., date, time, number of players).
+
+Create prompts that handle edge cases, such as unavailable courts or invalid requests.
+
+Integrate with Booking System:
+
+Connect the prompt flow to an external API or database that manages court availability and bookings.
+
+Generate Outputs:
+
+Design the chatbot's responses to be clear, concise, and helpful.
+
+Provide booking confirmations, reminders, and instructions.
+
+Evaluate and Refine:
+
+Test the chatbot with elderly users and gather feedback.
+
+Use metrics like task completion rate, user satisfaction, and error rate to evaluate performance.
+
+Refine the prompts and flow based on the evaluation results.
+
+Deploy the Application:
+
+Deploy the prompt flow as an API or integrate it into a website or application.
+
+Inputs, Prompts, and Outputs:
+
+Inputs:
+
+User text input (e.g., "I want to book a court for tomorrow at 2 PM").
+
+(Optional input) Voice input, converted to text.
+
+Prompts:
+
+Initial greeting: "Welcome to the Pickleball Court Booking Service! How can I help you today?"
+
+Date/time request: "What date and time would you like to book the court?"
+
+Number of players: "How many players will be using the court?"
+
+Confirmation: "Okay, I have a court reserved for you on [date] at [time] for [number] players. Is that correct?"
+
+Error handling: "I'm sorry, but that court is not available. Please choose a different time."
+
+Clarification: "Did you say you want to book for 2 PM or 3 PM?"
+
+Outputs:
+
+Booking confirmation: "Your booking is confirmed. You will receive a reminder email."
+
+Booking details: "You have booked court [court number] for [date] at [time]."
+
+Availability information: "The available times for [date] are [list of times]."
+
+Error message: "I'm sorry, I couldn't process your request. Please try again."
+
+Integrations/APIs:
+
+Azure AI Language: For intent recognition and entity extraction.
+
+Azure OpenAI: For generating conversational responses.
+
+Booking System API: To check court availability, create bookings, and manage reservations.
+
+Azure Cosmos DB: To store booking data.
+
+(We can have this Optional) Azure AI Speech: For speech-to-text and text-to-speech functionality.
+
+Part 2:
+Building LLM Applications
+
+Case Study Activity:
+
+Using Azure’s visual editor, design a prototype for a content generation tool that accepts a user topic and generates a blog post draft.
+
+Explain the components of your prompt flow:
+
+Input nodes (user topic).
+
+Model nodes (LLM generating the draft).
+
+Output nodes (displaying the draft).
+
+Write a 200-word reflection on the challenges you faced in designing this flow and how you overcame them using Azure’s tools.
+
+Here's how you can design a prototype for a content generation tool in Azure's visual editor:
+
+Components of the Prompt Flow:
+
+Input Nodes (User Topic):
+
+The input node is where the user enters the topic they want the blog post to be about.
+
+In Azure's visual editor, you would define an input node, likely a text input field, labeled "Enter Blog Topic."
+
+This node captures the user's topic and passes it to the next node in the flow.
+
+Model Nodes (LLM Generating the Draft):
+
+The model node is where you select and configure the LLM that will generate the blog post draft.
+
+In Azure, you would choose a model from the Azure AI Model Catalog, such as a GPT model from OpenAI.
+
+You would then craft a prompt that instructs the LLM on how to generate the blog post. For example:
+
+"Generate a blog post draft on the following topic: {topic}. The blog post should be informative, engaging, and approximately 500 words long. Include a title, introduction, several paragraphs discussing key aspects of the topic, and a conclusion."
+
+The {topic} placeholder is where the user's input from the input node is inserted.
+
+Output Nodes (Displaying the Draft):
+
+The output node is where the generated blog post draft is displayed to the user.
+
+In Azure's visual editor, you would define an output node, likely a text display area.
+
+The output of the model node (the generated blog post draft) is passed to this node and shown to the user.
+
+Reflection:
+
+Designing this prompt flow in Azure's visual editor presented a few challenges. Initially, crafting the prompt to elicit a well-structured and engaging blog post required experimentation. I found that providing specific instructions regarding length, tone, and sections (title, introduction, etc.) was crucial. Azure's iterative testing tools allowed me to quickly refine the prompt and observe the impact of different phrasings.
+
+Another challenge was ensuring the tool's robustness in handling diverse user inputs. Users might enter very broad or very narrow topics, and the LLM's output needed to be relevant and useful in either case. I addressed this by adding error handling and input validation to the flow, guiding the user towards providing more specific topics if needed.
+
+Finally, integrating the prompt flow with other Azure services, such as a content management system for publishing the final blog post, would be a valuable extension. While the prototype focused on draft generation, Azure's modular design makes such integrations feasible. Overall, Azure’s visual editor streamlined the process, enabling me to focus on the core logic of the application and iterate rapidly.
+
+
+Part 3:
+Monitoring and Maintaining LLM Applications
+Monitoring metrics like latency and error rates is crucial for optimizing the user experience of LLM applications. Latency, the time it takes for the application to respond to a user request, directly impacts responsiveness. High latency can lead to user frustration and abandonment, especially in interactive applications like chatbots. By tracking latency, developers can identify bottlenecks, optimize code, or scale resources to ensure timely responses.
+
+Error rates, which measure the frequency of incorrect or failed responses, are equally important. Errors can manifest as irrelevant, nonsensical, or harmful outputs, eroding user trust. Monitoring error rates helps detect issues with the LLM, the prompt flow, or the underlying data. This allows for prompt corrective action, such as refining prompts, fine-tuning the model, or implementing better error handling.
+
+In Azure, several tools and strategies can be employed for effective monitoring. Azure Monitor provides comprehensive monitoring capabilities, including application insights for tracking custom metrics and logs, and alert rules for proactive notification of anomalies.  Additionally, strategies like A/B testing different prompt flows or model versions can help quantify the impact of changes on user experience metrics
